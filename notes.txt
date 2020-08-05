@@ -1,0 +1,7 @@
+Symbol
+Number
+Object
+Boolean
+Null
+Undefined
+String
