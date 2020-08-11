@@ -1,7 +1,12 @@
-Symbol
-Number
-Object
-Boolean
-Null
-Undefined
-String
+The directions pop up,
+You'll click play to start the trivia game.
+One question comes up on the screen.
+You have to choose between four answers by clicking on the answer you believe is correct.
+Then you click submit to confirm your answer.
+A gif pops up saying the correct phrase.
+If you got it wrong, it says the correct phrase. 
+If you got it right, it says you got the answer correct.
+Then you click the button that says "Continue to next question".
+It repeats this process until you have answered every question.
+At the end of the trivia, it will say how many answers you got correct out of all of them.
+
