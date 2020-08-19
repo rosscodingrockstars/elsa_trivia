@@ -1,61 +1,72 @@
-const favoriteFoods = {
-  breakfast: "french toast",
-  lunch: "cheddar bowls",
-  dinner: "turkey and mashed potatoes",
-  dessert: "brownies and icecream"
-};
-// const breakfastCard = `
-// <div class="card" style="width: 18rem;">
-//   <div class="card-body"> 
-//     {" "}
-//     <h5 class="card-title">${favoriteFoods.breakfast}</h5>{" "}
-//     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>{" "}
-//     <p class="card-text">
-//       Some quick example text to build on the card title and make up the bulk of
-//       the card's content.
-//     </p>{" "}
-//     <a href="#" class="card-link">
-//       Card link
-//     </a>{" "}
-//     <a href="#" class="card-link">
-//      Another link
-//     </a>
-//   </div>
-// </div>
-// `;
-//console.log(favoriteFoods.dinner);
-//$(".col").append(breakfastCard);
-const characters = [
+const mathProblems = [
   {
-    name: "Leslie Knope",
-    location: "Pawnee",
-    loves: "waffles",
+    question: "what is 7x9?",
+    answerChoices: [
+      "63", "72", "90", "79",
+    ],
+    answer: "63"
   },
   {
-    name: "Ron Swanson",
-    location: "Pawnee",
-    loves: "Guns",
+    question: "what is 12x12?",
+    answerChoices: [
+      "124", "100", "144", "112",
+    ],
+    answer: "144"
   },
   {
-    name: "Tom Haberford",
-    location: "Pawnee",
-    loves: "Coconut water",
+    question: "what is 72x4?",
+    answerChoices: [
+      "148", "200", "208", "288",
+    ],
+    answer: "288"
   },
   {
-    name: "April Ludgate",
-    location: "Pawnee",
-    loves: "Gore",
+    question: "what is 5x11?",
+    answerChoices: [
+      "50", "55", "110", "45",
+    ],
+    answer: "55"
   },
-];
-for (let i = 0; i < characters.length; i++) {
-  const characterCard = `<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">${characters[i].name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${characters[i].location}</h6>
-      <p class="card-text">i love ${characters[i].loves}.</p>
-
-    </div>
-  </div>
-    `;
-    $(".col").append(characterCard);
-}
+  {
+    question: "what is 9x17?",
+    answerChoices: [
+      "153", "108", "126", "97",
+    ],
+    answer: "153"
+  },
+  {
+    question: "what is 4x6?",
+    answerChoices: [
+      "12", "16", "24", "36",
+    ],
+    answer: "24"
+  },
+  {
+    question: "what is 97x4?",
+    answerChoices: [
+      "199", "307", "412", "388",
+    ],
+    answer: "388"
+  },
+  {
+    question: "what is 123x5?",
+    answerChoices: [
+      "589", "568", "615", "613",
+    ],
+    answer: "615"
+  },
+  {
+    question: "what is 812x2?",
+    answerChoices: [
+      "1579", "1509", "1628", "1624",
+    ],
+    answer: "1624"
+  },
+  {
+    question: "what is 672 divided by 111",
+    answerChoices: [
+      "6.05405405402", "6.07895405405", "8.05405405305", "6.05405405405",
+    ],
+    answer: "6.05405405405"
+  },
+]
