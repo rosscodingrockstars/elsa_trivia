@@ -81,3 +81,8 @@ const mathProblems = [
     gif: "images/gif10.gif"
   },
 ]
+
+console.log(mathProblems[0].answerc)
+
+
+const Question
