@@ -66,20 +66,35 @@ const mathProblems = [
   },
 ];
 
-console.log(mathProblems[0].answerc);
+console.log(mathProblems[0].answers);
 
 const Question = `
+<h2>${mathProblems[0].question}</h2>
 <form>
-<div class="form-group">
-<label for="exampleInputEmail1">Email address</label>
-<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+  ${mathProblems[0].answerChoices[0]}
+  </label>
 </div>
-<div class="form-group">
-  <label for="exampleInputPassword1">Password</label>
-  <input type="password" class="form-control" id="exampleInputPassword1">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+    Second default radio
+  </label>
 </div>
-
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+  <label class="form-check-label" for="exampleRadios3">
+    Disabled radio
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+  <label class="form-check-label" for="exampleRadios1">
+    Default radio
+  </label>
+</div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>`;
 
