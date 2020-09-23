@@ -72,30 +72,32 @@ const Question = `
 <h2>${mathProblems[0].question}</h2>
 <form>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="${mathProblems[0].answerChoices[0]}" checked>
   <label class="form-check-label" for="exampleRadios1">
   ${mathProblems[0].answerChoices[0]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="${mathProblems[0].answerChoices[1]}">
   <label class="form-check-label" for="exampleRadios2">
-    Second default radio
+    ${mathProblems[0].answerChoices[1]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="${mathProblems[0].answerChoices[2]}">
   <label class="form-check-label" for="exampleRadios3">
-    Disabled radio
+  ${mathProblems[0].answerChoices[2]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="${mathProblems[0].answerChoices[3]}">
   <label class="form-check-label" for="exampleRadios1">
-    Default radio
+  ${mathProblems[0].answerChoices[3]}
   </label>
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>`;
 
 $(".col").append(Question)
+
+console.log($("input:checked").val()); 
