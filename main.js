@@ -101,3 +101,12 @@ const Question = `
 $(".col").append(Question)
 
 console.log($("input:checked").val()); 
+const answer = `${mathProblems[0].answer}`
+$( ".btn" ).click(function(e) {
+  e.preventDefault()
+  if(answer === $("input:checked").val()) {
+    console.log("Correct")
+  } else {
+    console.log("Incorrect")
+  }
+});
