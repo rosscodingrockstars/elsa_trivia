@@ -72,41 +72,41 @@ const Question = `
 <h2>${mathProblems[0].question}</h2>
 <form>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="${mathProblems[0].answerChoices[0]}" checked>
-  <label class="form-check-label" for="exampleRadios1">
+  <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[0].answerChoices[0]}" checked>
+  <label class="form-check-label" for="Radios1">
   ${mathProblems[0].answerChoices[0]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="${mathProblems[0].answerChoices[1]}">
-  <label class="form-check-label" for="exampleRadios2">
+  <input class="form-check-input" type="radio" name="radios" id="Radios2" value="${mathProblems[0].answerChoices[1]}">
+  <label class="form-check-label" for="Radios2">
     ${mathProblems[0].answerChoices[1]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="${mathProblems[0].answerChoices[2]}">
-  <label class="form-check-label" for="exampleRadios3">
+  <input class="form-check-input" type="radio" name="radios" id="Radios3" value="${mathProblems[0].answerChoices[2]}">
+  <label class="form-check-label" for="Radios3">
   ${mathProblems[0].answerChoices[2]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="${mathProblems[0].answerChoices[3]}">
-  <label class="form-check-label" for="exampleRadios1">
+  <input class="form-check-input" type="radio" name="radios" id="Radios4" value="${mathProblems[0].answerChoices[3]}">
+  <label class="form-check-label" for="Radios4">
   ${mathProblems[0].answerChoices[3]}
   </label>
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>`;
 
-$(".col").append(Question)
+$(".question").append(Question)
 
 console.log($("input:checked").val()); 
 const answer = `${mathProblems[0].answer}`
 $( ".btn" ).click(function(e) {
   e.preventDefault()
   if(answer === $("input:checked").val()) {
-    console.log("Correct")
+$(".answer-check").text("Congratulations,you got the right answer!");
   } else {
-    console.log("Incorrect")
+    $(".answer-check").text("Bummer, you got it wrong.");
   }
 });
