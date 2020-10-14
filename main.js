@@ -69,8 +69,9 @@ const mathProblems = [
 console.log(mathProblems[0].answers);
 
 const Question = `
-<h2>${mathProblems[0].question}</h2>
 <form>
+<h2>${mathProblems[0].question}</h2>
+
 <div class="form-check">
   <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[0].answerChoices[0]}" checked>
   <label class="form-check-label" for="Radios1">
@@ -105,8 +106,11 @@ const answer = `${mathProblems[0].answer}`
 $( ".btn" ).click(function(e) {
   e.preventDefault()
   if(answer === $("input:checked").val()) {
-$(".answer-check").text("Congratulations,you got the right answer!");
+  $("form").hide()
+  $(".answer-check").text("Congratulations, you got the right answer!");
+  $(".gif-container").append($".gif").attr("src","mathProblems[0].gif")
   } else {
+    $("form").hide()
     $(".answer-check").text("Bummer, you got it wrong.");
   }
-});
+})
