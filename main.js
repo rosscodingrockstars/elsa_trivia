@@ -65,7 +65,7 @@ const mathProblems = [
     gif: "images/gif10.gif",
   },
 ];
-
+$(".gif").hide() 
 console.log(mathProblems[0].answers);
 
 const Question = `
@@ -101,16 +101,20 @@ const Question = `
 
 $(".question").append(Question)
 
-console.log($("input:checked").val()); 
+console.log($("input:checked").val());
 const answer = `${mathProblems[0].answer}`
 $( ".btn" ).click(function(e) {
   e.preventDefault()
   if(answer === $("input:checked").val()) {
   $("form").hide()
   $(".answer-check").text("Congratulations, you got the right answer!");
-  $(".gif-container").append($".gif").attr("src","mathProblems[0].gif")
+  $(".gif").show() 
+  $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif))
   } else {
     $("form").hide()
     $(".answer-check").text("Bummer, you got it wrong.");
+
+    $(".gif").show() 
+  $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif))
   }
-})
+}
