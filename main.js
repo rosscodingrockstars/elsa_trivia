@@ -66,6 +66,7 @@ const mathProblems = [
   },
 ];
 $(".gif").hide() 
+$(".next").hide()
 console.log(mathProblems[0].answers);
 
 const Question = `
@@ -108,7 +109,8 @@ $( ".btn" ).click(function(e) {
   if(answer === $("input:checked").val()) {
   $("form").hide()
   $(".answer-check").text("Congratulations, you got the right answer!");
-  $(".gif").show() 
+  $(".gif").show()
+  $(".next").show() 
   $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif))
   } else {
     $("form").hide()
@@ -116,5 +118,6 @@ $( ".btn" ).click(function(e) {
 
     $(".gif").show() 
   $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif))
+  $(".next").show() 
   }
 }
