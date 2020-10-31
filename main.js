@@ -65,8 +65,8 @@ const mathProblems = [
     gif: "images/gif10.gif",
   },
 ];
-$(".gif").hide() 
-$(".next").hide()
+$(".gif").hide();
+$(".next").hide();
 console.log(mathProblems[0].answers);
 
 const Question = `
@@ -100,24 +100,24 @@ const Question = `
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>`;
 
-$(".question").append(Question)
+$(".question").append(Question);
 
 console.log($("input:checked").val());
-const answer = `${mathProblems[0].answer}`
-$( ".btn" ).click(function(e) {
-  e.preventDefault()
-  if(answer === $("input:checked").val()) {
-  $("form").hide()
-  $(".answer-check").text("Congratulations, you got the right answer!");
-  $(".gif").show()
-  $(".next").show() 
-  $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif))
+const answer = `${mathProblems[0].answer}`;
+$(".btn").click(function (e) {
+  e.preventDefault();
+  if (answer === $("input:checked").val()) {
+    $("form").hide();
+    $(".answer-check").text("Congratulations, you got the right answer!");
+    $(".gif").show();
+    $(".next").show();
+    $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif));
   } else {
-    $("form").hide()
+    $("form").hide();
     $(".answer-check").text("Bummer, you got it wrong.");
 
-    $(".gif").show() 
-  $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif))
-  $(".next").show() 
+    $(".gif").show();
+    $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif));
+    $(".next").show();
   }
-}
+});
