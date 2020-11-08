@@ -68,43 +68,43 @@ const mathProblems = [
 $(".gif").hide();
 $(".next").hide();
 console.log(mathProblems[0].answers);
-
+let questionCount = 0;
 const Question = `
 <form>
-<h2>${mathProblems[0].question}</h2>
+<h2>${mathProblems[questionCount].question}</h2>
 
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[0].answerChoices[0]}" checked>
+  <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[questionCount].answerChoices[0]}" checked>
   <label class="form-check-label" for="Radios1">
-  ${mathProblems[0].answerChoices[0]}
+  ${mathProblems[questionCount].answerChoice[0]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios2" value="${mathProblems[0].answerChoices[1]}">
+  <input class="form-check-input" type="radio" name="radios" id="Radios2" value="${mathProblems[questionCount].answerChoices[1]}">
   <label class="form-check-label" for="Radios2">
-    ${mathProblems[0].answerChoices[1]}
+    ${mathProblems[questionCount].answerChoices[1]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios3" value="${mathProblems[0].answerChoices[2]}">
+  <input class="form-check-input" type="radio" name="radios" id="Radios3" value="${mathProblems[questionCount].answerChoices[2]}">
   <label class="form-check-label" for="Radios3">
-  ${mathProblems[0].answerChoices[2]}
+  ${mathProblems[questionCount].answerChoices[2]}
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios4" value="${mathProblems[0].answerChoices[3]}">
+  <input class="form-check-input" type="radio" name="radios" id="Radios4" value="${mathProblems[questionCount].answerChoices[3]}">
   <label class="form-check-label" for="Radios4">
-  ${mathProblems[0].answerChoices[3]}
+  ${mathProblems[questionCount].answerChoices[3]}
   </label>
 </div>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="submit btn btn-primary">Submit</button>
 </form>`;
 
 $(".question").append(Question);
 
 console.log($("input:checked").val());
 const answer = `${mathProblems[0].answer}`;
-$(".btn").click(function (e) {
+$(".submit").click(function (e) {
   e.preventDefault();
   if (answer === $("input:checked").val()) {
     $("form").hide();
@@ -120,4 +120,10 @@ $(".btn").click(function (e) {
     $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif));
     $(".next").show();
   }
+});
+
+$(".next").click(function (e) {
+  e.preventDefault();
+win++;
+ 
 });
