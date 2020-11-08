@@ -76,7 +76,7 @@ const Question = `
 <div class="form-check">
   <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[questionCount].answerChoices[0]}" checked>
   <label class="form-check-label" for="Radios1">
-  ${mathProblems[questionCount].answerChoice[0]}
+  ${mathProblems[questionCount].answerChoices[0]}
   </label>
 </div>
 <div class="form-check">
@@ -111,19 +111,22 @@ $(".submit").click(function (e) {
     $(".answer-check").text("Congratulations, you got the right answer!");
     $(".gif").show();
     $(".next").show();
-    $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif));
+    $(".gif-container").append(
+      $(".gif").attr("src", mathProblems[questionCount].gif)
+    );
   } else {
     $("form").hide();
     $(".answer-check").text("Bummer, you got it wrong.");
 
     $(".gif").show();
-    $(".gif-container").append($(".gif").attr("src", mathProblems[0].gif));
+    $(".gif-container").append(
+      $(".gif").attr("src", mathProblems[questionCount].gif)
+    );
     $(".next").show();
   }
 });
 
 $(".next").click(function (e) {
   e.preventDefault();
-win++;
- 
+  questionCount++;
 });
