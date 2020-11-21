@@ -68,61 +68,51 @@ const mathProblems = [
 $(".gif").hide();
 $(".next").hide();
 console.log(mathProblems[0].answers);
-let questionCount = 0;
-const Question = `
-<form>
-<h2>${mathProblems[questionCount].question}</h2>
-
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[questionCount].answerChoices[0]}" checked>
-  <label class="form-check-label" for="Radios1">
-  ${mathProblems[questionCount].answerChoices[0]}
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios2" value="${mathProblems[questionCount].answerChoices[1]}">
-  <label class="form-check-label" for="Radios2">
-    ${mathProblems[questionCount].answerChoices[1]}
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios3" value="${mathProblems[questionCount].answerChoices[2]}">
-  <label class="form-check-label" for="Radios3">
-  ${mathProblems[questionCount].answerChoices[2]}
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radios" id="Radios4" value="${mathProblems[questionCount].answerChoices[3]}">
-  <label class="form-check-label" for="Radios4">
-  ${mathProblems[questionCount].answerChoices[3]}
-  </label>
-</div>
-<button type="submit" class="submit btn btn-primary">Submit</button>
-</form>`;
-
-$(".question").append(Question);
+let questionCount = 0; 
+function handleQandA() {
+  const Question = `
+  <form>
+  <h2>${mathProblems[questionCount].question}</h2>
+  
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[questionCount].answerChoices[0]}" checked>
+    <label class="form-check-label" for="Radios1">
+    ${mathProblems[questionCount].answerChoices[0]}
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" id="Radios2" value="${mathProblems[questionCount].answerChoices[1]}">
+    <label class="form-check-label" for="Radios2">
+      ${mathProblems[questionCount].answerChoices[1]}
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" id="Radios3" value="${mathProblems[questionCount].answerChoices[2]}">
+    <label class="form-check-label" for="Radios3">
+    ${mathProblems[questionCount].answerChoices[2]}
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" id="Radios4" value="${mathProblems[questionCount].answerChoices[3]}">
+    <label class="form-check-label" for="Radios4">
+    ${mathProblems[questionCount].answerChoices[3]}
+    </label>
+  </div>
+  <button type="submit" class="submit btn btn-primary">Submit</button>
+  </form>`;
+  
+  $(".question").append(Question);
+  
+}
 
 console.log($("input:checked").val());
 const answer = `${mathProblems[0].answer}`;
 $(".submit").click(function (e) {
   e.preventDefault();
   if (answer === $("input:checked").val()) {
-    $("form").hide();
-    $(".answer-check").text("Congratulations, you got the right answer!");
-    $(".gif").show();
-    $(".next").show();
-    $(".gif-container").append(
-      $(".gif").attr("src", mathProblems[questionCount].gif)
-    );
+    correct();
   } else {
-    $("form").hide();
-    $(".answer-check").text("Bummer, you got it wrong.");
-
-    $(".gif").show();
-    $(".gif-container").append(
-      $(".gif").attr("src", mathProblems[questionCount].gif)
-    );
-    $(".next").show();
+    incorrect();
   }
 });
 
@@ -132,3 +122,24 @@ $(".next").click(function(e){
   $("form").show();
   console.log(questionCount)
 });
+
+ function incorrect() {
+  $("form").hide();
+  $(".answer-check").text("Bummer, you got it wrong.");
+
+  $(".gif").show();
+  $(".gif-container").append(
+    $(".gif").attr("src", mathProblems[questionCount].gif)
+  );
+  $(".next").show()
+ }
+
+ function correct() {
+  $("form").hide();
+  $(".answer-check").text("Congratulations, you got the right answer!");
+  $(".gif").show();
+  $(".next").show();
+  $(".gif-container").append(
+    $(".gif").attr("src", mathProblems[questionCount].gif)
+  );
+ }
