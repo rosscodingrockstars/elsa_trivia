@@ -69,7 +69,11 @@ $(".gif").hide();
 $(".next").hide();
 console.log(mathProblems[0].answers);
 let questionCount = 0; 
+console.log(mathProblems.length)
 function handleQandA() {
+  if (questionCount < mathProblems.length) {
+
+  
   const Question = `
   <form>
   <h2>${mathProblems[questionCount].question}</h2>
@@ -100,11 +104,12 @@ function handleQandA() {
   </div>
   <button type="submit" class="submit btn btn-primary">Submit</button>
   </form>`;
-  
   $(".question").append(Question);
-  
+} else {
+  displayResults();
 }
-
+}
+displayResults();
 console.log($("input:checked").val());
 const answer = `${mathProblems[0].answer}`;
 $(".submit").click(function (e) {
@@ -142,4 +147,8 @@ $(".next").click(function(e){
   $(".gif-container").append(
     $(".gif").attr("src", mathProblems[questionCount].gif)
   );
+ }
+
+ function displayResults() { 
+   console.log("ok")
  }
