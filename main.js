@@ -62,18 +62,15 @@ const mathProblems = [
       "6.05405405405",
     ],
     answer: "6.05405405405",
-    gif: "images/gif10.gif",
+    gif: "images/gif10.webp",
   },
 ];
 
-console.log(mathProblems[0].answers);
-let questionCount = 0; 
-console.log(mathProblems.length)
+let questionCount;
+
 function handleQandA() {
   if (questionCount < mathProblems.length) {
-
-  
-  const Question = `
+    const Question = `
   <form>
   <h2>${mathProblems[questionCount].question}</h2>
   
@@ -103,39 +100,40 @@ function handleQandA() {
   </div>
   <button type="submit" class="submit btn btn-primary">Submit</button>
   </form>`;
-  $(".question").append(Question);
-  handleSubmit();
-} else {
-  displayResults();
-}
+    $(".question").append(Question);
+    handleSubmit();
+  } else {
+    displayResults();
+  }
 }
 
-console.log($("input:checked").val());
-const answer = `${mathProblems[0].answer}`;
 function handleSubmit() {
   $(".submit").click(function (e) {
     e.preventDefault();
+    let answer = `${mathProblems[0].answer}`;
     if (answer === $("input:checked").val()) {
       correct();
     } else {
       incorrect();
     }
     handleNext();
-
   });
-  
 }
+
 function handleNext() {
-  $(".next").click(function(e){
+  $(".next").click(function (e) {
     e.preventDefault();
-    questionCount++;
+    $(".answer-check").text("");
+    $(".gif").attr("src", "");
+    $(".gif").hide();
+    $(".next").hide();
+    $("form").text("");
     $("form").show();
-    console.log(questionCount)
+    handleQandA();
   });
 }
 
-
- function incorrect() {
+function incorrect() {
   $("form").hide();
   $(".answer-check").text("Bummer, you got it wrong.");
 
@@ -143,10 +141,11 @@ function handleNext() {
   $(".gif-container").append(
     $(".gif").attr("src", mathProblems[questionCount].gif)
   );
-  $(".next").show()
- }
+  $(".next").show();
+  questionCount++;
+}
 
- function correct() {
+function correct() {
   $("form").hide();
   $(".answer-check").text("Congratulations, you got the right answer!");
   $(".gif").show();
@@ -154,13 +153,17 @@ function handleNext() {
   $(".gif-container").append(
     $(".gif").attr("src", mathProblems[questionCount].gif)
   );
- }
+  questionCount++;
+}
 
- function displayResults() { 
-   console.log("ok")
- }
- function startQuiz() {
+function displayResults() {
+  console.log("ok");
+}
+
+function startQuiz() {
   $(".gif").hide();
   $(".next").hide();
-   handleQandA();
- };
+  handleQandA();
+}
+
+startQuiz();
