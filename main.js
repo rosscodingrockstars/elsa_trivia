@@ -65,8 +65,7 @@ const mathProblems = [
     gif: "images/gif10.gif",
   },
 ];
-$(".gif").hide();
-$(".next").hide();
+
 console.log(mathProblems[0].answers);
 let questionCount = 0; 
 console.log(mathProblems.length)
@@ -105,28 +104,36 @@ function handleQandA() {
   <button type="submit" class="submit btn btn-primary">Submit</button>
   </form>`;
   $(".question").append(Question);
+  handleSubmit();
 } else {
   displayResults();
 }
 }
-displayResults();
+
 console.log($("input:checked").val());
 const answer = `${mathProblems[0].answer}`;
-$(".submit").click(function (e) {
-  e.preventDefault();
-  if (answer === $("input:checked").val()) {
-    correct();
-  } else {
-    incorrect();
-  }
-});
+function handleSubmit() {
+  $(".submit").click(function (e) {
+    e.preventDefault();
+    if (answer === $("input:checked").val()) {
+      correct();
+    } else {
+      incorrect();
+    }
+    handleNext();
 
-$(".next").click(function(e){
-  e.preventDefault();
-  questionCount++;
-  $("form").show();
-  console.log(questionCount)
-});
+  });
+  
+}
+function handleNext() {
+  $(".next").click(function(e){
+    e.preventDefault();
+    questionCount++;
+    $("form").show();
+    console.log(questionCount)
+  });
+}
+
 
  function incorrect() {
   $("form").hide();
@@ -152,3 +159,8 @@ $(".next").click(function(e){
  function displayResults() { 
    console.log("ok")
  }
+ function startQuiz() {
+  $(".gif").hide();
+  $(".next").hide();
+   handleQandA();
+ };
