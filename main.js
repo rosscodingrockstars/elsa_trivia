@@ -67,6 +67,7 @@ const mathProblems = [
 ];
 
 let questionCount;
+let score;
 
 function handleQandA() {
   if (questionCount < mathProblems.length) {
@@ -150,6 +151,7 @@ function correct() {
   $(".answer-check").text("Congratulations, you got the right answer!");
   $(".gif").show();
   $(".next").show();
+  score++;
   $(".gif-container").append(
     $(".gif").attr("src", mathProblems[questionCount].gif)
   );
@@ -157,12 +159,16 @@ function correct() {
 }
 
 function displayResults() {
-  console.log("ok");
+// Congrats! You made it to the end! 
+// Score
+$(".answer-check").text("Congrats! You made it to the end! ");
+$(".score").text(`${score}`);
 }
-
 function startQuiz() {
   $(".gif").hide();
   $(".next").hide();
+  questionCount = 0;
+  score = 0;
   handleQandA();
 }
 
