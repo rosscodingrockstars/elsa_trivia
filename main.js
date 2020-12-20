@@ -159,10 +159,15 @@ function correct() {
 }
 
 function displayResults() {
-// Congrats! You made it to the end! 
-// Score
-$(".answer-check").text("Congrats! You made it to the end! ");
+  $(".answer-check").text("Congrats! You made it to the end! ");
 $(".score").text(`${score}`);
+$(".gif").show();
+  $(".gif-container").append(
+    $(".gif").attr("src", "images/giphy.gif")
+  );
+
+
+
 }
 function startQuiz() {
   $(".gif").hide();
