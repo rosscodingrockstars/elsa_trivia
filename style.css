@@ -1,8 +1,27 @@
 :root {
     --black: #000000;
-    --teal: #12bcd3;
+    --teal: #c5f5fc;
+    --blue: #a1caf1;
+}
+
+body {
+    background-color: rgb(58, 56, 56);
 }
 
 h1 {
     color: var(--teal);
+}
+
+h2,label {
+    color: var(--blue);
+}
+
+
+.btn {
+    background-color: var(--blue);
+    color: rgb(58, 56, 56);
+}
+
+.btn:hover {
+     background-color: #7699b9;
 }

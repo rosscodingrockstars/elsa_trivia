@@ -73,7 +73,7 @@ function handleQandA() {
   if (questionCount < mathProblems.length) {
     const Question = `
   <form>
-  <h2>${mathProblems[questionCount].question}</h2>
+  <h2 class="my-3">${mathProblems[questionCount].question}</h2>
   
   <div class="form-check">
     <input class="form-check-input" type="radio" name="radios" id="Radios1" value="${mathProblems[questionCount].answerChoices[0]}" checked>
@@ -99,7 +99,7 @@ function handleQandA() {
     ${mathProblems[questionCount].answerChoices[3]}
     </label>
   </div>
-  <button type="submit" class="submit btn btn-primary">Submit</button>
+  <button type="submit" class="submit btn btn-primary mt-3">Submit</button>
   </form>`;
     $(".question").append(Question);
     handleSubmit();
